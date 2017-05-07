@@ -1,0 +1,39 @@
+<ion-view title="Schedule" id="page1" style="background-color:#607CBE;">
+  <ion-content padding="true" class="has-header">
+    <form id="schedule-form1" class="list">
+      <label class="item item-input" id="schedule-search1">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="" ng-model="sc.searchTerm" ng-change="sc.search()">
+      </label>
+      <label class="item item-select" id="schedule-select2">
+        <span class="input-label">Day</span>
+        <select ng-model="sc.chosenDate" ng-change="sc.dateFilter()">
+          <option ng-repeat="date in sc.availableDates">
+            {{date}}
+          </option>
+        </select>
+      </label>
+      <label class="item item-select" id="schedule-select1">
+        <span class="input-label">Start Time</span>
+        <select ng-model="sc.chosenStartTime" ng-change="sc.timeFilter()">
+          <option ng-repeat="time in sc.availableStartTimes" >
+            {{time}}
+          </option>
+        </select>
+      </label>
+    </form>
+    <ion-list id="schedule-list2">
+      <ion-item id="schedule-list-item7" ng-repeat="event in sc.showArray"
+      ui-sref="menu.eventPlaceholder" ng-click="sc.passEvent(
+                                      event.eventId, event.eventType,
+                                      event.mealType, event.startTime,
+                                      event.endTime, event.room, 
+                                      event.chair, event.subjectArea,
+                                      event.eventTitle, event.date,
+                                      event.customLabel,
+                                      event.note)" >{{event.eventTitle}} 
+                                                              <br>from: {{event.startTime}} 
+                                                              <br>to:   {{event.endTime}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

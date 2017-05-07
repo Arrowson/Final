@@ -1,0 +1,32 @@
+<ion-view title="My Schedule" id="page3" style="background-color:#607CBE;" >
+  <ion-content padding="true" class="has-header">
+    <form id="mySchedule-form3" class="list">
+      <label class="item item-select" id="mySchedule-select4">
+        <span class="input-label">Day</span>
+        <select ng-model="msc.chosenDate" ng-change="msc.dateFilter()">
+          <option ng-repeat="date in msc.availableDates">
+            {{date}}
+          </option>
+        </select>
+      </label>
+      <label class="item item-select" id="mySchedule-select5">
+        <span class="input-label">Time</span>
+        <select ng-model="msc.chosenStartTime" ng-change="msc.timeFilter()">
+          <option ng-repeat="time in msc.availableStartTimes">
+            {{time}}
+          </option>
+        </select>
+      </label>
+      <div class="spacer" style="height: 10px;"></div>
+      <ion-list>
+        <ion-item ng-repeat="event in msc.showArray">
+          {{event.eventTitle}} <br>
+          Date: {{event.date}}<br>
+          start Time: {{event.startTime}}<br>
+          end Time: {{event.endTime}}<br>
+          <button ng-click="msc.alert(event.eventId)" class="button button-dark button-small">Remove Event</button>
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+</ion-view>

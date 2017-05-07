@@ -1,0 +1,20 @@
+<ion-view title="Presenters" id="page2" style="background-color:#607CBE;">
+  <ion-content padding="true" class="has-header">
+    <ion-list id="presenters-list3">
+      
+    </ion-list>
+    <div class="spacer" style="height: 10px;"></div>
+    <ion-list id="presenters-list4">
+      <ion-item  id="presenters-list-item18" ui-sref="menu.presenter" ng-repeat="presenters in pc.db" ng-click="pc.passPresenters(
+                                            presenters.speakerID, presenters.firstName, presenters.lastName, presenters.affiliation,
+                                            presenters.bio, presenters.picture)">
+        <ion-avatar class="item-left">
+          <img src="{{presenters.picture}}" height="70px" width="70px">
+        </ion-avatar>
+                                                                  {{presenters.firstName}} 
+                                                              <br>{{presenters.lastName}} 
+                                                              <br>{{presenters.affiliation}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

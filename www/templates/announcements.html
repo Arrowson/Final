@@ -1,0 +1,19 @@
+<ion-view title="Announcements" id="page9" style="background-color:#607CBE;">
+  <ion-content padding="true" class="has-header">
+    <div class="item item-body" id="announcements-list-item-container5">
+      <ion-item>Previous Messages</ion-item>
+        <br>
+      <div id="announcements-markdown6" class="show-list-numbers-and-dots">
+        
+        <ion-list>
+          <ion-item  class="item-text-wrap"ng-repeat="message in ac.db">
+            <h3>{{message.title}}</h3>
+            {{message.dateTime}}<br>
+            
+            {{message.category}} : {{message.messageText}}
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

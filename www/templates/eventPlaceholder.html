@@ -1,0 +1,18 @@
+<ion-view title="Event" id="page7" style="background-color:#607CBE;">
+  <ion-content padding="true" class="has-header">
+    <form id="eventPlaceholder-form2" class="list">
+      <button ng-click="epc.addToSchedule()" class="button button-energized  button-block">Add to Your Schedule</button>
+    </form>
+    <div class="list card" id="eventPlaceholder-card21">
+      <div class="item item-body" id="eventPlaceholder-list-item-container2">
+        <div id="eventPlaceholder-markdown2" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">Title: {{epc.event.eventTitle}}</p>
+          <p style="color:#000000;">Date: {{epc.event.date}}</p>
+          <p style="color:#000000;">Start Time: {{epc.event.startTime}}</p>
+          <p style="color:#000000;">End Time: {{epc.event.endTime}}</p>
+          <p style="color:#000000;">Chair: {{epc.event.chair}}</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
